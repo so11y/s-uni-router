@@ -43,7 +43,7 @@ export function SRouterLayoutPlugin() {
   return {
     name: "s-router-layout-plugin",
     enforce: "pre",
-    transform(code, id) {
+    transform(code: string, id: string) {
       const filter = createFilter(["*.vue"]);
       if (filter(id)) {
         return context.transform(code, id);

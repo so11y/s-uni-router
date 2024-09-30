@@ -1,21 +1,21 @@
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
+import nodeResolve from "@rollup/plugin-node-resolve";
 import { resolve } from "path";
 
 export default defineConfig({
-  plugins: [dts()],
+  plugins: [dts(), nodeResolve()],
   build: {
     sourcemap: false,
     minify: false,
     lib: {
-      entry: resolve("./router/src/index.ts"),
-      formats: ["es"],
+      name: "router-layout",
+      entry: resolve("./src/index.ts"),
     },
     rollupOptions: {
-      external: ["vue", "@dcloudio/uni-app", "qs"],
+      external: ["vite", "vue", "node:path", "node:fs"],
       output: {
         dir: "./dist",
-        entryFileNames: "s-uni-router.js",
       },
     },
   },
