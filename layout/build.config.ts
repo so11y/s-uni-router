@@ -13,7 +13,15 @@ export default defineConfig({
       entry: resolve("./src/index.ts"),
     },
     rollupOptions: {
-      external: ["vite", "vue", "node:path", "node:fs"],
+      external: [
+        "jsonc-parser",
+        "magic-string",
+        "@vue/compiler-sfc",
+        "vite",
+        "node:path",
+        "node:fs",
+        "node:process",
+      ],
       output: {
         dir: "./dist",
       },
