@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "s-uni-router": "workspace:^",
+    "@s-router-uni/layout": "workspace:^",
     "@dcloudio/uni-app": "3.0.0-4020420240722003",
     "@dcloudio/uni-app-harmony": "3.0.0-4020420240722003",
     "@dcloudio/uni-app-plus": "3.0.0-4020420240722003",

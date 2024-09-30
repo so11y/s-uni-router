@@ -1,5 +1,5 @@
 {
-  "name": "layout",
+  "name": "@s-router-uni/layout",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/layout.umd.js",

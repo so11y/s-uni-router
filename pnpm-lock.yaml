@@ -186,6 +186,9 @@ importers:
       '@dcloudio/uni-quickapp-webview':
         specifier: 3.0.0-4020420240722003
         version: 3.0.0-4020420240722003(postcss@8.4.47)(rollup@4.22.5)(vue@3.4.21(typescript@5.4.2))(webpack-sources@3.2.3)
+      '@s-router-uni/layout':
+        specifier: workspace:^
+        version: link:../layout
       '@vue/runtime-core':
         specifier: 3.4.21
         version: 3.4.21
