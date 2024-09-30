@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "useDefineForClassFields": true,
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true,
+    "noEmit": false,
+    "paths": {
+      "@/*": ["./router/src/*"]
+    },
+    "sourceMap": false
+  },
+  "include": ["./router/src", "./router/routerExpand.d.ts"],
+  "exclude": ["node_modules"]
+}
