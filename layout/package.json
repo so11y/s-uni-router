@@ -1,8 +1,10 @@
 {
-  "name": "y",
+  "name": "layout",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/layout.umd.js",
+  "module": "./dist/layout.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "vite build --config ./build.config.ts"
   },

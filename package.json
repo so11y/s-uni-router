@@ -10,8 +10,7 @@
   "files": [
     "dist",
     "router/layouts",
-    "plugin/cVite.cjs",
-    "plugin/esVite.js"
+    "layout/dist"
   ],
   "keywords": [],
   "author": "",
