@@ -3,6 +3,14 @@
 1. 首屏首次拦截。
 2. 路由全局拦截。
 
+#### useRouter Api 说明[链接](https://github.com/so11y/s-uni-router/blob/master/router/src/routerHooks.ts#L39)
+
+#### 界面生命周期请使用 s-uni-router 导出主要用于首次拦截[链接](https://github.com/so11y/s-uni-router/blob/master/router/src/onCycle.ts#L20)
+
+```javascript
+import { onLoad, onShow, onMounted } from "s-uni-router";
+```
+
 ### 具体使用查看 playground 示例
 
 ```javascript
@@ -39,16 +47,6 @@ App.vue
 
   onRouterReady("/pages/index/index");
 </script>
-```
-
-### useRouter Api说明[链接](https://github.com/so11y/s-uni-router/blob/master/router/src/routerHooks.ts#L39)
-```javascript
-push: (to: ToRouterPath<UniNamespace.NavigateToOptions>) => Promise<void> | undefined
-pushTab: (to: ToRouterPath<UniNamespace.SwitchTabOptions>) => Promise<void> | undefined
-replace: (to: ToRouterPath<UniNamespace.RedirectToOptions>) => Promise<void> | undefined
-replaceAll: (to: ToRouterPath<UniNamespace.ReLaunchOptions>) => Promise<void> | undefined
-back: (delta?: number) => Promise<any>
-
 ```
 
 #### uniRouterLayout 参考 vite-plugin-uni-layouts 实现[https://github.dev/uni-helper/vite-plugin-uni-layouts]
