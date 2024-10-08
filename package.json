@@ -4,6 +4,11 @@
   "description": "一个uni-app 路由管理解决方案",
   "main": "./dist/s-uni-router.js",
   "types": "./dist/index.d.ts",
+  "homepage": "https://github.com/so11y/s-uni-router",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/so11y/s-uni-router.git"
+  },
   "scripts": {
     "build": "pnpm run build:router && pnpm run build:layout",
     "build:router": "vite build --config ./build.config.ts",
@@ -11,8 +16,7 @@
   },
   "files": [
     "dist",
-    "router/layouts",
-    "layout/dist"
+    "router/layouts"
   ],
   "keywords": [
     "router",
@@ -20,8 +24,8 @@
     "uni-router",
     "router-guards"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "zrrz",
+  "license": "MIT",
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-4020420240722003",
     "lodash-es": "^4.17.21",

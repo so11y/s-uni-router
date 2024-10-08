@@ -8,6 +8,7 @@ import { normalizePath } from "vite";
 
 export interface Page {
   path: string;
+  layout?: string
 }
 
 function slash(str: string) {
@@ -43,7 +44,6 @@ export function loadPagesJson(path = "src/pages.json", cwd = process.cwd()) {
 export function getTarget(
   resolvePath: string,
   pages: Page[] = [],
-  layout = "default",
   cwd = process.cwd()
 ) {
   if (!(resolvePath.endsWith(".vue") || resolvePath.endsWith(".nvue")))
@@ -62,10 +62,7 @@ export function getTarget(
 
   const page = pages.find((p) => normalizePath(p.path) === pathWithoutExt);
   if (page) {
-    return {
-      layout,
-      ...page,
-    } as Required<Page>;
+    return page;
   }
   return false;
 }
