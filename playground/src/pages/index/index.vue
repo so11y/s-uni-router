@@ -1,11 +1,5 @@
-<style lang="scss" scoped></style>
-
 <template>
-  <!-- <DefaultLayout> -->
   <view class="content">
-    333
-    <text class="title c-red font-size-32">333</text>
-    <wd-button>主要按钮</wd-button>
     <wd-button
       type="success"
       @click="
@@ -16,14 +10,9 @@
           },
         })
       "
-      >成功按钮</wd-button
+      >跳转ohter等待5秒</wd-button
     >
-    <wd-button type="info">信息按钮</wd-button>
-    <wd-button type="warning">警告按钮</wd-button>
-    <wd-button type="error">危险按钮</wd-button>
-
   </view>
-  <!-- </DefaultLayout> -->
 </template>
 
 <script setup lang="ts">

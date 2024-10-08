@@ -13,7 +13,7 @@
           },
         })
       "
-      >成功按钮</wd-button
+      >跳转ohter等待5秒</wd-button
     >
   </view>
 </template>

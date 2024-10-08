@@ -1,9 +1,20 @@
-<style lang="scss" scoped></style>
-
 <template>
-  <view class="content"
+  <view
     >---other ---
     {{ route }}
+
+    <wd-button
+      type="success"
+      @click="
+        router.push({
+          url: 'pages/ppp/index',
+          query: {
+            aa: '5',
+          },
+        })
+      "
+      >跳转ppp等待5秒</wd-button
+    >
   </view>
 </template>
 
