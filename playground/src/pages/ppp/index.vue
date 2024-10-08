@@ -1,8 +1,6 @@
-<style lang="scss" scoped></style>
-
 <template>
   <view>
-    <view class="content">---pppp ---{{ router.route }}</view>
+    <view>---pppp ---{{ router.route }}</view>
     <wd-button
       type="success"
       @click="

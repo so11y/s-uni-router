@@ -1,5 +1,5 @@
 <template>
-  <view class="content">
+  <view>
     <wd-button
       type="success"
       @click="
