@@ -14,6 +14,7 @@ export default function () {
     return new Promise((r, s) => {
       setTimeout(() => {
         r(true);
+        //测试
       }, 5000);
     });
   });
