@@ -14,7 +14,12 @@
     "router/layouts",
     "layout/dist"
   ],
-  "keywords": [],
+  "keywords": [
+    "router",
+    "uni-app",
+    "uni-router",
+    "router-guards"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
