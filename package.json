@@ -5,7 +5,9 @@
   "main": "./dist/s-uni-router.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "vite build --config ./build.config.ts"
+    "build": "pnpm run build:router && pnpm run build:layout",
+    "build:router": "vite build --config ./build.config.ts",
+    "build:layout": "pnpm -F @s-router-uni/layout run build"
   },
   "files": [
     "dist",

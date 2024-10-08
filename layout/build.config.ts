@@ -14,8 +14,8 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
-        "jsonc-parser",
-        "magic-string",
+        "jsoncParser",
+        "MagicString",
         "@vue/compiler-sfc",
         "vite",
         "node:path",
