@@ -22,7 +22,7 @@ export default function () {
 ```
 
 ```javascript
-vite.config.js
+vite.config.js;
 import { defineConfig } from "vite";
 import uni from "@dcloudio/vite-plugin-uni";
 import uniRouterLayout from "@s-router-uni/layout";
@@ -41,5 +41,4 @@ App.vue
 </script>
 ```
 
-
-#### layout插件使用vite-plugin-uni-layouts代码[https://github.dev/uni-helper/vite-plugin-uni-layouts]
+#### uniRouterLayout 参考 vite-plugin-uni-layouts 实现[https://github.dev/uni-helper/vite-plugin-uni-layouts]
