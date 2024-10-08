@@ -7,9 +7,7 @@
 
 ```javascript
 import { RouterGuards } from "s-uni-router";
-
 const guards = new RouterGuards();
-
 export default function () {
   guards.beforeEach((form, to) => {
     console.log(form, to);
@@ -23,20 +21,11 @@ export default function () {
 ```
 
 ```javascript
+import { defineConfig } from "vite";
+import uni from "@dcloudio/vite-plugin-uni";
+import uniRouterLayout from "@s-router-uni/layout";
 
-import { RouterGuards } from "s-uni-router";
-const guards = new RouterGuards();
-export default function () {
-  guards.beforeEach((form, to) => {
-    console.log(form, to);
-    return new Promise((r, s) => {
-      setTimeout(() => {
-        r(true);
-        //测试
-      }, 5000);
-    });
-  });
-}
-
-
+export default defineConfig({
+  plugins: [uniRouterLayout(), uni()],
+});
 ```
