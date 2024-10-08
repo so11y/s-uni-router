@@ -40,3 +40,6 @@ App.vue
   onRouterReady("/pages/index/index");
 </script>
 ```
+
+
+#### layout组件使用vite-plugin-uni-layouts代码[https://github.dev/uni-helper/vite-plugin-uni-layouts]
