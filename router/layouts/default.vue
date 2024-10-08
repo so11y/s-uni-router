@@ -8,8 +8,8 @@ import { useGuardsReady, useGuardsImpl } from "s-uni-router";
 const readyRouter = useGuardsReady();
 
 function getCurrentPageParams() {
-  const page = getCurrentPages().slice(-1);
-  if (page.length) {
+  const [page] = getCurrentPages().slice(-1);
+  if (page) {
     useGuardsImpl().fixRouterPath(page.route);
   }
 }
