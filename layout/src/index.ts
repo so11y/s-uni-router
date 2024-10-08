@@ -36,6 +36,31 @@ class Context {
       };
     }
   }
+
+  async importLayoutComponents(code: string, id: string) {
+    const ms = new MagicString(code)
+    const imports = [
+      `import LayoutDefaultRouterUni from "s-uni-router/router/layouts/default.vue"`,
+    ]
+    const components = [
+      `app.component("LayoutDefaultRouterUni", LayoutDefaultRouterUni);`
+    ]
+    ms.append(imports.join('\n'))
+    ms.replace(
+      /(createApp[\s\S]*?)(return\s{\s*app)/,
+      `$1${components.join('')}$2`,
+    )
+    const map = ms.generateMap({
+      source: id,
+      file: `${id}.map`,
+      includeContent: true,
+    })
+    code = ms.toString()
+    return {
+      code,
+      map,
+    }
+  }
 }
 
 export function SRouterLayoutPlugin() {
@@ -44,10 +69,12 @@ export function SRouterLayoutPlugin() {
     name: "s-router-layout-plugin",
     enforce: "pre",
     transform(code: string, id: string) {
-      const filter = createFilter(["*.vue"]);
-      if (filter(id)) {
-        return context.transform(code, id);
-      }
+
+      const filter = createFilter(['src/main.(ts|js)', 'main.(ts|js)'])
+      if (filter(id))
+        return context.importLayoutComponents(code, id)
+
+      return context.transform(code, id)
     },
   };
 }

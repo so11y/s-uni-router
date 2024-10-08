@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import uni from "@dcloudio/vite-plugin-uni";
 import autoImport from "unplugin-auto-import/vite";
-// import uniRouterLayout from "s-uni-router/plugin/cVite.cjs";
+import uniRouterLayout from "@s-router-uni/layout";
 import unocss from "unocss/vite";
 import path from "path";
 
@@ -19,7 +19,7 @@ export default defineConfig({
     },
   },
   plugins: [
-    // uniRouterLayout(),
+    uniRouterLayout(),
     uni(),
     unocss(),
     autoImport({

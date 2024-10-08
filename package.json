@@ -18,7 +18,7 @@
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-4020420240722003",
     "lodash-es": "^4.17.21",
-    "qs": "^6.13.0",
+    "qs": "6.3.0",
     "vue": "3.4.21",
     "@uni-helper/vite-plugin-uni-layouts": "^0.1.10",
     "s-uni-router": "workspace:^",

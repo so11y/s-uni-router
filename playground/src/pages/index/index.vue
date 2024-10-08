@@ -21,6 +21,7 @@
     <wd-button type="info">信息按钮</wd-button>
     <wd-button type="warning">警告按钮</wd-button>
     <wd-button type="error">危险按钮</wd-button>
+
   </view>
   <!-- </DefaultLayout> -->
 </template>

@@ -83,7 +83,7 @@ export async function parseSFC(code: string): Promise<SFCDescriptor> {
     );
   } catch {
     throw new Error(
-      '[vite-plugin-uni-layouts] Vue3\'s "@vue/compiler-sfc" is required.'
+      '[s-router-layout-plugin] Vue3\'s "@vue/compiler-sfc" is required.'
     );
   }
 }

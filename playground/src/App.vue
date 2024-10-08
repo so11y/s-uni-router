@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import { onRouterReady } from "s-uni-router";
+import { onRouterReady } from "s-uni-router";
 
-// onRouterReady("/pages/index/index");
+onRouterReady("/pages/index/index");
 </script>
