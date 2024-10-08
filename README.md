@@ -22,6 +22,7 @@ export default function () {
 ```
 
 ```javascript
+vite.config.js
 import { defineConfig } from "vite";
 import uni from "@dcloudio/vite-plugin-uni";
 import uniRouterLayout from "@s-router-uni/layout";
@@ -29,4 +30,13 @@ import uniRouterLayout from "@s-router-uni/layout";
 export default defineConfig({
   plugins: [uniRouterLayout(), uni()],
 });
+```
+
+```html
+App.vue
+<script setup lang="ts">
+  import { onRouterReady } from "s-uni-router";
+
+  onRouterReady("/pages/index/index");
+</script>
 ```
