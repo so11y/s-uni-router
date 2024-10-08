@@ -1,14 +1,10 @@
 <template>
-  <view>
-    44
-    <slot v-if="readyRouter" />
-  </view>
+  <slot v-if="readyRouter" />
 </template>
 <script setup>
 import { onShow } from "s-uni-router";
 import { useGuardsReady, useGuardsImpl } from "s-uni-router";
 import { last } from "lodash-es";
-
 
 const readyRouter = useGuardsReady();
 
