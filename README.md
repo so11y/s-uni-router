@@ -41,4 +41,13 @@ App.vue
 </script>
 ```
 
+```javascript
+useRouter Api类型
+push: (to: ToRouterPath<UniNamespace.NavigateToOptions>) => Promise<void> | undefined
+pushTab: (to: ToRouterPath<UniNamespace.SwitchTabOptions>) => Promise<void> | undefined
+replace: (to: ToRouterPath<UniNamespace.RedirectToOptions>) => Promise<void> | undefined
+replaceAll: (to: ToRouterPath<UniNamespace.ReLaunchOptions>) => Promise<void> | undefined
+back: (delta?: number) => Promise<any>
+```
+
 #### uniRouterLayout 参考 vite-plugin-uni-layouts 实现[https://github.dev/uni-helper/vite-plugin-uni-layouts]
