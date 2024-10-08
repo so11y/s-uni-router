@@ -41,13 +41,14 @@ App.vue
 </script>
 ```
 
+### useRouter Api说明[链接](https://github.com/so11y/s-uni-router/blob/master/router/src/routerHooks.ts#L39)
 ```javascript
-useRouter Api类型
 push: (to: ToRouterPath<UniNamespace.NavigateToOptions>) => Promise<void> | undefined
 pushTab: (to: ToRouterPath<UniNamespace.SwitchTabOptions>) => Promise<void> | undefined
 replace: (to: ToRouterPath<UniNamespace.RedirectToOptions>) => Promise<void> | undefined
 replaceAll: (to: ToRouterPath<UniNamespace.ReLaunchOptions>) => Promise<void> | undefined
 back: (delta?: number) => Promise<any>
+
 ```
 
 #### uniRouterLayout 参考 vite-plugin-uni-layouts 实现[https://github.dev/uni-helper/vite-plugin-uni-layouts]
