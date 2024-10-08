@@ -42,4 +42,4 @@ App.vue
 ```
 
 
-#### layout组件使用vite-plugin-uni-layouts代码[https://github.dev/uni-helper/vite-plugin-uni-layouts]
+#### layout插件使用vite-plugin-uni-layouts代码[https://github.dev/uni-helper/vite-plugin-uni-layouts]
