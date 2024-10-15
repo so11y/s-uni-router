@@ -1,5 +1,10 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "commands": {
+    "publish": {
+      "ignore": ["playground"]
+    }
+  },
   "version": "0.0.0",
   "npmClient": "pnpm"
 }
