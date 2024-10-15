@@ -42,8 +42,6 @@
     "build:quickapp-webview-union": "uni build -p quickapp-webview-union"
   },
   "dependencies": {
-    "s-uni-router": "workspace:^",
-    "@s-router-uni/layout": "workspace:^",
     "@dcloudio/uni-app": "3.0.0-4020420240722003",
     "@dcloudio/uni-app-harmony": "3.0.0-4020420240722003",
     "@dcloudio/uni-app-plus": "3.0.0-4020420240722003",
@@ -59,9 +57,11 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-4020420240722003",
     "@dcloudio/uni-mp-xhs": "3.0.0-4020420240722003",
     "@dcloudio/uni-quickapp-webview": "3.0.0-4020420240722003",
+    "@s-router-uni/layout": "workspace:^",
     "@vue/runtime-core": "3.4.21",
-    "wot-design-uni": "^1.3.11",
-    "vue": "3.4.21"
+    "s-uni-router": "workspace:^",
+    "vue": "3.4.21",
+    "wot-design-uni": "^1.3.11"
   },
   "devDependencies": {
     "@dcloudio/types": "^3.4.8",
