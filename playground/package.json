@@ -57,7 +57,7 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-4020420240722003",
     "@dcloudio/uni-mp-xhs": "3.0.0-4020420240722003",
     "@dcloudio/uni-quickapp-webview": "3.0.0-4020420240722003",
-    "@s-router-uni/layout": "workspace:^",
+    "@s-router-uni/layout": "^1.0.0",
     "@vue/runtime-core": "3.4.21",
     "s-uni-router": "workspace:^",
     "vue": "3.4.21",
@@ -76,5 +76,6 @@
     "unocss-preset-weapp": "^0.62.2",
     "unplugin-auto-import": "^0.18.3",
     "vite": "5.2.8"
-  }
+  },
+  "gitHead": "20f035d25efad7493758b63a9b94b0f6684ffe27"
 }
