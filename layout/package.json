@@ -5,6 +5,9 @@
   "main": "./dist/layout.umd.js",
   "module": "./dist/layout.mjs",
   "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "vite build --config ./build.config.ts"
   },
