@@ -27,8 +27,7 @@
   "author": "zrrz",
   "license": "MIT",
   "dependencies": {
-    "qs": "6.3.0",
-    "lodash-es": "^4.17.21"
+    "qs": "6.3.0"
   },
   "devDependencies": {
     "vue": "3.4.21",
@@ -64,6 +63,7 @@
     "unocss-preset-weapp": "^0.62.2",
     "unplugin-auto-import": "^0.18.3",
     "vite": "5.2.8",
-    "vite-plugin-dts": "^3.6.3"
+    "vite-plugin-dts": "^3.6.3",
+    "lodash-es": "^4.17.21"
   }
 }
