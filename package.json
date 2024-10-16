@@ -1,6 +1,6 @@
 {
   "name": "s-uni-router",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "一个uni-app 路由管理解决方案",
   "main": "./dist/s-uni-router.js",
   "types": "./dist/index.d.ts",
@@ -27,6 +27,11 @@
   "author": "zrrz",
   "license": "MIT",
   "dependencies": {
+    "qs": "6.3.0",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "vue": "3.4.21",
     "@dcloudio/uni-app": "3.0.0-4020420240722003",
     "@dcloudio/uni-app-harmony": "3.0.0-4020420240722003",
     "@dcloudio/uni-app-plus": "3.0.0-4020420240722003",
@@ -42,15 +47,7 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-4020420240722003",
     "@dcloudio/uni-mp-xhs": "3.0.0-4020420240722003",
     "@dcloudio/uni-quickapp-webview": "3.0.0-4020420240722003",
-    "@uni-helper/vite-plugin-uni-layouts": "^0.1.10",
     "@vue/runtime-core": "3.4.21",
-    "lodash-es": "^4.17.21",
-    "qs": "6.3.0",
-    "s-uni-router": "workspace:^",
-    "vue": "3.4.21",
-    "wot-design-uni": "^1.3.11"
-  },
-  "devDependencies": {
     "@dcloudio/types": "^3.4.8",
     "@dcloudio/uni-automator": "3.0.0-4020420240722003",
     "@dcloudio/uni-cli-shared": "3.0.0-4020420240722003",
