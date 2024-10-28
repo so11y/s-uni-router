@@ -52,7 +52,7 @@ export class RouterGuards extends RouterGuardsEvent {
     navigateName: NavigateNamesType = NavigateNames.navigateTo
   ) {
     try {
-      this.pending.value = true;
+      // this.pending.value = true;
       await this.navigateTemp(to, () => {
         return new Promise((r, s) => {
           (uni as any)[navigateName]({
@@ -63,7 +63,7 @@ export class RouterGuards extends RouterGuardsEvent {
         });
       });
     } finally {
-      this.pending.value = false;
+      // this.pending.value = false;
     }
   }
 

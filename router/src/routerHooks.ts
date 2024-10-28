@@ -47,10 +47,15 @@ export function useRouter() {
       useNavigateTo(to, NavigateNames.redirectTo),
     replaceAll: (to: ToRouterPath<UniNamespace.ReLaunchOptions>) =>
       useNavigateTo(to, NavigateNames.reLaunch),
-    back: (delta = 1) =>
-      uni.navigateBack({
-        delta,
-      }),
+    back: (data: UniNamespace.NavigateBackOptions = { delta: 1 }) => {
+      return new Promise((resolve, reject) => {
+        uni.navigateBack({
+          success: resolve,
+          fail: reject,
+          ...data,
+        });
+      });
+    },
   };
 }
 
