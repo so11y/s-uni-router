@@ -1,4 +1,3 @@
-import { isEqual } from "lodash-es";
 import { hasLocationsRouter, normalizingPath } from "./share";
 import {
   onGuards,
