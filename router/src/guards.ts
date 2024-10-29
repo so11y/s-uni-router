@@ -37,6 +37,8 @@ export class RouterGuards extends RouterGuardsEvent {
 
   isReady = ref(false);
 
+  pendingLocation: null | string = null;
+
   constructor() {
     super();
     uni.$RouterGuards = this;
@@ -78,18 +80,30 @@ export class RouterGuards extends RouterGuardsEvent {
     navigateName: NavigateNamesType = NavigateNames.navigateTo
   ) {
     const serializableFullPath = normalizingPath(to);
-    if (isEqual(this.currentRouterPath.value?.fullPath, serializableFullPath)) {
+
+    if (this.currentRouterPath.value?.fullPath === serializableFullPath) {
       return;
     }
-    await this.navigateTemp(to, () => {
-      return new Promise((r, s) => {
-        (uni as any)[navigateName]({
-          url: serializableFullPath,
-          success: r,
-          fail: s,
+
+    if (this.currentRouterPath.value?.fullPath === this.pendingLocation) {
+      return;
+    }
+
+    this.pendingLocation = serializableFullPath;
+
+    try {
+      await this.navigateTemp(to, () => {
+        return new Promise((r, s) => {
+          (uni as any)[navigateName]({
+            url: serializableFullPath,
+            success: r,
+            fail: s,
+          });
         });
       });
-    });
+    } finally {
+      this.pendingLocation = null;
+    }
   }
 
   async navigateTemp(to: RouterLocation, callback?: () => void) {
