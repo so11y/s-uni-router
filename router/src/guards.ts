@@ -42,6 +42,7 @@ export class RouterGuards extends RouterGuardsEvent {
 
   fixRouterPath(to: string) {
     if (this.isReady.value) {
+      to = to.startsWith("/") ? to : `/${to}`;
       this.currentRouterPath.value = to;
     }
   }
