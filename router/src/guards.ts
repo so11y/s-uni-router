@@ -84,7 +84,7 @@ export class RouterGuards extends RouterGuardsEvent {
       return;
     }
 
-    if (this.currentRouterPath.value?.fullPath === this.pendingLocation) {
+    if (this.pendingLocation && normalizingPath(to) === this.pendingLocation) {
       return;
     }
 
