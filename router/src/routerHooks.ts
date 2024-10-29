@@ -21,9 +21,6 @@ function useNavigateTo(
   navigateName: NavigateNamesType = NavigateNames.navigateTo
 ) {
   const routerGuards = useGuardsImpl();
-  if (routerGuards.pending.value) {
-    return;
-  }
 
   if (isString(to)) {
     return routerGuards.navigate(

@@ -1,3 +1,4 @@
+import { isEqual } from "lodash-es";
 import { hasLocationsRouter, normalizingPath } from "./share";
 import {
   onGuards,
@@ -32,8 +33,6 @@ export class RouterGuardsEvent {
 export class RouterGuards extends RouterGuardsEvent {
   currentRouterPath = ref<string | null>(null);
 
-  pending = ref(false);
-
   isReady = ref(false);
 
   constructor() {
@@ -51,20 +50,18 @@ export class RouterGuards extends RouterGuardsEvent {
     to: RouterLocation,
     navigateName: NavigateNamesType = NavigateNames.navigateTo
   ) {
-    try {
-      // this.pending.value = true;
-      await this.navigateTemp(to, () => {
-        return new Promise((r, s) => {
-          (uni as any)[navigateName]({
-            url: normalizingPath(to),
-            success: r,
-            fail: s,
-          });
+    if (isEqual(this.currentRouterPath.value, to)) {
+      return;
+    }
+    await this.navigateTemp(to, () => {
+      return new Promise((r, s) => {
+        (uni as any)[navigateName]({
+          url: normalizingPath(to),
+          success: r,
+          fail: s,
         });
       });
-    } finally {
-      // this.pending.value = false;
-    }
+    });
   }
 
   async navigateTemp(to: RouterLocation, callback?: () => void) {
