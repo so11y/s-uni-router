@@ -1,6 +1,6 @@
 {
   "name": "s-uni-router",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "一个uni-app 路由管理解决方案",
   "main": "./dist/s-uni-router.js",
   "types": "./dist/index.d.ts",
