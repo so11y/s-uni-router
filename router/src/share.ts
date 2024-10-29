@@ -4,11 +4,18 @@ import { stringify } from "qs";
 
 export function normalizingPath(location: RouterLocation) {
   const { url, query } = location;
-  if (!query) {
-    return url;
-  }
   const slashPad = url.startsWith("/") ? "" : "/";
-  return `${slashPad}${url}?${stringify(query)}`;
+  const slashPadUrl = `${slashPad}${url}`;
+  if (!query) {
+    return slashPadUrl;
+  }
+  const maybeQuery = stringify(query);
+
+  if (maybeQuery) {
+    return `${slashPadUrl}?${maybeQuery}`;
+  }
+
+  return slashPadUrl;
 }
 
 export function hasLocationsRouter(v: any): v is RouterLocation {

@@ -7,10 +7,8 @@ import {
 } from "./types";
 import { RouterGuards } from "./guards";
 import { onLoad } from "./onCycle";
-import { ref } from "vue";
+import { ref, UnwrapRef } from "vue";
 import { onLaunch } from "@dcloudio/uni-app";
-
-const EMPTY_OPTIONS = {};
 
 export function useGuardsImpl(): RouterGuards {
   return uni.$RouterGuards;
@@ -57,12 +55,12 @@ export function useRouter() {
 }
 
 export function useRoute() {
-  const route = ref({} as RouterLocation);
-  onLoad((options) => {
-    const cuPage = last(getCurrentPages())!;
-    useGuardsImpl().fixRouterPath(cuPage.route!);
-    route.value.url = cuPage.route!;
-    route.value.query = options ?? EMPTY_OPTIONS;
+  const route = ref(
+    {} as NonNullable<UnwrapRef<RouterGuards["currentRouterPath"]>>
+  );
+  onLoad(() => {
+    const cuPage = useGuardsImpl().fixRouterPath()!;
+    route.value = cuPage.value! || {};
   });
   return route;
 }
