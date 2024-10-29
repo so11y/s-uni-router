@@ -7,7 +7,7 @@ import {
   NavigateNamesType,
   RouterLocation,
 } from "./types";
-import { ref, shallowRef } from "vue";
+import { ref, shallowRef, toRaw } from "vue";
 
 export class RouterGuardsEvent {
   event = {
@@ -42,19 +42,29 @@ export class RouterGuards extends RouterGuardsEvent {
     uni.$RouterGuards = this;
   }
 
+  private updateRouter(to: RouterLocation) {
+    const url = to.url.startsWith("/") ? to.url : `/${to.url}`;
+
+    this.currentRouterPath.value = {
+      url,
+      query: to.query,
+      fullPath: normalizingPath({
+        url,
+        query: to.query,
+      }),
+    };
+
+    return this.currentRouterPath;
+  }
+
   fixRouterPath() {
     if (this.isReady.value) {
       const [page] = getCurrentPages().slice(-1) as any;
       if (page) {
-        const url = page.route.startsWith("/") ? page.route : `/${page.route}`;
-        this.currentRouterPath.value = {
-          url,
+        this.updateRouter({
+          url: page.route,
           query: page.options,
-          fullPath: normalizingPath({
-            url,
-            query: page.options,
-          }),
-        };
+        });
       } else {
         this.currentRouterPath.value = null;
       }
@@ -83,9 +93,6 @@ export class RouterGuards extends RouterGuardsEvent {
   }
 
   async navigateTemp(to: RouterLocation, callback?: () => void) {
-    // const formRouterPath = {
-    //   url: this.currentRouterPath.value!,
-    // };
     for (const beforeGuards of this.event.beforeEach) {
       const hasNewRoute = await beforeGuards(this.currentRouterPath.value!, to);
 
@@ -101,8 +108,12 @@ export class RouterGuards extends RouterGuardsEvent {
 
     await callback?.();
 
+    const afterRouter = toRaw(this.currentRouterPath.value);
+
+    this.updateRouter(to);
+
     for (const afterGuards of this.event.afterEach) {
-      await afterGuards(this.currentRouterPath.value!, to);
+      await afterGuards(afterRouter, to);
     }
   }
 
