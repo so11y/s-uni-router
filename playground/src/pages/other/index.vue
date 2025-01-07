@@ -17,4 +17,6 @@
 import { useRouter } from "s-uni-router";
 
 const router = useRouter();
+
+console.log(getCurrentPages(), "dd-=[]");
 </script>

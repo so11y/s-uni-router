@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { onRouterReady } from "s-uni-router";
-
-onRouterReady("/pages/index/index");
+import { onLoad } from "@dcloudio/uni-app";
+import {} from "vue";
+onRouterReady("/pages/other/index");
+console.log(getCurrentInstance() , "--");
 </script>

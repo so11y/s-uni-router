@@ -3,7 +3,7 @@ import {
   NavigateNames,
   NavigateNamesType,
   RouterLocation,
-  ToRouterPath,
+  ToRouterPath
 } from "./types";
 import { RouterGuards } from "./guards";
 import { onLoad } from "./onCycle";
@@ -23,7 +23,7 @@ function useNavigateTo(
   if (isString(to)) {
     return routerGuards.navigate(
       {
-        url: to,
+        url: to
       },
       navigateName
     );
@@ -47,10 +47,10 @@ export function useRouter() {
         uni.navigateBack({
           success: resolve,
           fail: reject,
-          ...data,
+          ...data
         });
       });
-    },
+    }
   };
 }
 
@@ -69,12 +69,19 @@ export function useGuardsReady() {
   return useGuardsImpl().isReady;
 }
 
-export function onRouterReady(to: string) {
+export function onRouterReady(to?: RouterLocation) {
   let resolve: (value: unknown) => void;
   uni.$RouterGuards.withLaunchPromise = new Promise((_resolve) => {
     resolve = _resolve;
   });
-  onLaunch(() => {
-    useGuardsImpl().ready(to).then(resolve);
+  onLaunch((options) => {
+    useGuardsImpl()
+      .ready(
+        to ?? {
+          url: options?.path!,
+          query: options?.query
+        }
+      )
+      .then(resolve);
   });
 }

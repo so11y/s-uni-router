@@ -4,14 +4,14 @@ import {
   BeforeEachGuardsReturn,
   NavigateNames,
   NavigateNamesType,
-  RouterLocation,
+  RouterLocation
 } from "./types";
 import { ref, shallowRef, toRaw } from "vue";
 
 export class RouterGuardsEvent {
   event = {
     afterEach: [] as Array<onGuards>,
-    beforeEach: [] as Array<onGuards<BeforeEachGuardsReturn>>,
+    beforeEach: [] as Array<onGuards<BeforeEachGuardsReturn>>
   };
 
   beforeEach(callback: onGuards<BeforeEachGuardsReturn>) {
@@ -51,8 +51,8 @@ export class RouterGuards extends RouterGuardsEvent {
       query: to.query,
       fullPath: normalizingPath({
         url,
-        query: to.query,
-      }),
+        query: to.query
+      })
     };
 
     return this.currentRouterPath;
@@ -64,7 +64,7 @@ export class RouterGuards extends RouterGuardsEvent {
       if (page) {
         this.updateRouter({
           url: page.route,
-          query: page.options,
+          query: page.options
         });
       } else {
         this.currentRouterPath.value = null;
@@ -96,7 +96,7 @@ export class RouterGuards extends RouterGuardsEvent {
           (uni as any)[navigateName]({
             url: serializableFullPath,
             success: r,
-            fail: s,
+            fail: s
           });
         });
       });
@@ -130,10 +130,8 @@ export class RouterGuards extends RouterGuardsEvent {
     }
   }
 
-  async ready(to: string) {
-    await this.navigateTemp({
-      url: to,
-    });
+  async ready(to: RouterLocation) {
+    await this.navigateTemp(to);
     this.isReady.value = true;
     this.fixRouterPath();
   }

@@ -1,13 +1,14 @@
 <template>
   <view>
+    <input type="number" />
     <wd-button
       type="success"
       @click="
         router.push({
           url: 'pages/other/index',
           query: {
-            aa: '1',
-          },
+            aa: '1'
+          }
         })
       "
       >跳转ohter等待5秒</wd-button
@@ -22,7 +23,7 @@ import { onLoad, onShow, onMounted } from "s-uni-router";
 const router = useRouter();
 
 onLoad(() => {
-  console.log("onLoad/首次界面加载完成并路由周期走完才执行");
+  console.log("onLoad/首次界面加载完成并路由周期走完才执行---1", router);
 });
 
 onShow(() => {
